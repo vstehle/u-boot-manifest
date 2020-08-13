@@ -7,9 +7,8 @@
 
 	<default revision="refs/heads/master" remote="github" sync-j="4"/>
 
-	<project name="glikely/u-boot-manifest" path="scripts">
+	<project name="glikely/u-boot-tfa-build" path="scripts">
 		<linkfile src="top.mk" dest="Makefile"/>
-		<linkfile src="buildall.sh" dest="buildall.sh"/>
 	</project>
 
 	<!-- OP-TEE -->
