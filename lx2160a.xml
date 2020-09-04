@@ -1,0 +1,32 @@
+<manifest>
+	<remote name="github" fetch="https://github.com/"/>
+	<remote name="kernel.org" fetch="https://git.kernel.org/pub/scm/linux/kernel/git"/>
+	<remote name="tf.org" fetch="https://git.trustedfirmware.org/TF-A"/>
+	<remote name="linaro-ilias" fetch="https://git.linaro.org/people/ilias.apalodimas"/>
+	<remote name="qoriq" fetch="https://source.codeaurora.org/external/qoriq/qoriq-components"/>
+
+	<default revision="refs/heads/master" remote="github" sync-j="4"/>
+
+	<project name="glikely/u-boot-tfa-build" path="scripts">
+		<linkfile src="top.mk" dest="Makefile"/>
+	</project>
+
+	<!-- OP-TEE -->
+	<project path="optee_os"	remote="github" name="apalos/optee_os" revision="stmm_pr"/>
+
+	<!-- EDK2 for StandaloneMM -->
+	<project name="edk2"		remote="linaro-ilias" revision="stmm_ffa" sync-s="true"/>
+	<project name="edk2-platforms"	remote="linaro-ilias" revision="stmm_rpmb_ffa"/>
+
+	<project path="trusted-firmware-a" remote="github" name="glikely/trusted-firmware-a" revision="lx2160a"/>
+	<project path="u-boot" remote="github" name="glikely/u-boot" revision="lx2160a"/>
+	<project name="devicetree/devicetree-rebasing.git" path="devicetree-rebasing" remote="kernel.org"/>
+
+	<!-- Platform specific source and binaries -->
+	<project path="rcw" remote="github" name="glikely/nxp-rcw" revision="lx2160a"/>
+	<project name="restool" remote="qoriq" revision="refs/tags/LSDK-20.04"/>
+	<project path="mc-utils" remote="github" revision="refs/heads/LSDK-20.04-cex7" name="glikely/nxp-mc-utils"/>
+	<project path="qoriq-mc-binary" remote="github" name="nxp/qoriq-mc-binary" revision="refs/tags/LSDK-20.04"/>
+	<project path="ddr-phy-binary" remote="github" name="nxp/ddr-phy-binary"/>
+</manifest>
+
