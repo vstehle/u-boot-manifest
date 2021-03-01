@@ -1,0 +1,30 @@
+<manifest>
+	<remote name="github" fetch="https://github.com/"/>
+	<remote name="linaro-jose" fetch="https://git.linaro.org/people/jose.marinho"/>
+	<remote name="kernel.org" fetch="https://git.kernel.org/pub/scm/linux/kernel/git"/>
+	<remote name="tf.org" fetch="https://git.trustedfirmware.org/TF-A"/>
+	<remote name="mbed" fetch="https://git.trustedfirmware.org/"/>
+
+	<default revision="refs/heads/master" remote="github" sync-j="4"/>
+
+	<project name="glikely/u-boot-tfa-build" path="scripts" revision="refs/pull/3/head" remote="github">
+		<linkfile src="top.mk" dest="Makefile"/>
+		<linkfile src="Readme.rst" dest="Readme.rst"/>
+	</project>
+
+	<!-- OP-TEE -->
+	<project path="optee_os"	remote="linaro-jose" name="optee_os" revision="fwu_update"/>
+
+	<!-- EDK2 for StandaloneMM -->
+	<project path="edk2"  				remote="linaro-jose"	name="edk2" 			revision="fwu_update" sync-s="true"/>
+	<project path="edk2-platforms" 		remote="linaro-jose" 	name="edk2-platforms" 	revision="fwu_update"/>
+
+	<project path="trusted-firmware-a" 	remote="linaro-jose" 	name="trusted-firmware-a" 			revision="fwu_update"/>
+	<project path="trusted-firmware-a/mbed-tls" 	remote="mbed" 	name="mirror/mbed-tls" 			revision="refs/tags/mbedtls-2.18.0"/>
+
+	<project path="u-boot" 				remote="linaro-jose" 	name="u-boot" 			revision="fwu_update"/>
+
+	<project name="devicetree/devicetree-rebasing.git" path="devicetree-rebasing" remote="kernel.org"/>
+
+</manifest>
+
