@@ -1,0 +1,23 @@
+<!-- Compulab IOT-GATE-iMX8 -->
+<manifest>
+	<remote name="github" fetch="https://github.com/"/>
+	<remote name="paulliu" fetch="https://git.linaro.org/people/paul.liu/systemready"/>
+
+	<default revision="refs/heads/master" remote="github" sync-j="4"/>
+
+	<project name="glikely/u-boot-tfa-build" path="scripts">
+		<linkfile src="top.mk" dest="Makefile"/>
+	</project>
+
+	<!-- OP-TEE -->
+	<project name="optee_os" remote="paulliu" revision="refs/tags/linaro-systemready-phase1m7"/>
+
+	<project name="trusted-firmware-a" remote="paulliu" revision="refs/tags/linaro-systemready-phase1m7"/>
+	<project name="u-boot" remote="paulliu" revision="refs/tags/linaro-systemready-phase1m7"/>
+
+	<!-- Platform specific source and binaries -->
+	<project name="ARMmbed/mbedtls" path="mbedtls" remote="github" revision="refs/tags/v2.26.0"/>
+	<project name="non-free/imx-mkimage" path="imx-mkimage" remote="paulliu" revision="paulliu-imx8-1"/>
+
+</manifest>
+
