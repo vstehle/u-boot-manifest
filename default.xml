@@ -25,5 +25,6 @@
 	<!-- Platform specific source and binaries -->
 	<project name="binaries-marvell" remote="marvell" path="binaries-marvell" revision="refs/heads/binaries-marvell-armada-18.12"/>
 	<project name="mv-ddr-marvell" remote="marvell" path="mv-ddr" revision="refs/heads/mv_ddr-armada-atf-mainline"/>
+	<project name="raspberrypi/firmware" remote="github" path="rpi-firmware"/>
 </manifest>
 
